@@ -1,0 +1,231 @@
+{
+  "main": {
+    "id": "fe1f49e3b37bd527",
+    "type": "split",
+    "children": [
+      {
+        "id": "38e1588dc8491b9f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f0bd5a1bbc27275b",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "600f2fa15e23caf3",
+    "type": "split",
+    "children": [
+      {
+        "id": "dc3a933902d57bb7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "92e05211a80cf7f0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "1f2d29bc4e9eb53f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "6a0f6c1fece913f9",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 275.504695892334
+  },
+  "right": {
+    "id": "86bdad387a08d1bd",
+    "type": "split",
+    "children": [
+      {
+        "id": "ee8c3017237729c0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d3d7f286c3f3a3cd",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "代码笔记/深度学习/深度学习.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "深度学习 的反向链接列表"
+            }
+          },
+          {
+            "id": "38bd80693e2781ed",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "代码笔记/数据库/Homework 5.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Homework 5 的出链列表"
+            }
+          },
+          {
+            "id": "1cfdbf2ea3bed4f4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "f8e494894b80b2ce",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "代码笔记/数据库/Homework 5.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Homework 5 的大纲"
+            }
+          },
+          {
+            "id": "249c0164d90ba404",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:新建数据库": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "f0bd5a1bbc27275b",
+  "lastOpenFiles": [
+    "账号/Google.md",
+    "代码笔记/编程/JAVA.md",
+    "代码笔记/求一个数字的二进制表示有多少个1.md",
+    "代码笔记/编程/算法基础.md",
+    "代码笔记/数学.md",
+    "代码笔记/深度学习/CS224n.md",
+    "未命名.canvas",
+    "代码笔记/深度学习/代码.md",
+    "代码笔记/编程/数据结构与算法.md",
+    "代码笔记/编程/attachments/Pasted image 20260925130157.png",
+    "代码笔记/编程/attachments",
+    "未命名.base",
+    "代码笔记/深度学习/名词解释.md",
+    "代码笔记/深度学习/attachments/Pasted image 20260918174808.png",
+    "代码笔记/深度学习/深度学习.md",
+    "代码笔记/编程/代码随想录.md",
+    "代码笔记/深度学习/attachments/Pasted image 20260805104701.png",
+    "代码笔记/深度学习/attachments/Pasted image 20260805104658.png",
+    "代码笔记/深度学习/attachments/Pasted image 20260805104404.png",
+    "代码笔记/深度学习/attachments/Pasted image 20260805104353.png",
+    "代码笔记/深度学习/attachments/Pasted image 20260727164010.png",
+    "代码笔记/深度学习/attachments/Pasted image 20260726125031.png",
+    "实验室/未命名.md",
+    "代码笔记/深度学习/Essay notes.md",
+    "代码笔记/深度学习/attachments/Pasted image 20260722174649.png",
+    "实验室",
+    "英语/积累.md",
+    "英语/家教.md",
+    "未命名 1.base",
+    "代码笔记/深度学习/attachments/question_1.5.png",
+    "英语/attachments",
+    "2026-05-08.md",
+    "未命名 2.base",
+    "代码笔记/OS/Operating System.md",
+    "代码笔记/OS/attachments/Exercises.pdf",
+    "zotero",
+    "代码笔记/OS/Exercise.md",
+    "代码笔记/编程/C语言基础.md",
+    "代码笔记/OS/attachments",
+    "代码笔记/OS",
+    "代码笔记/编程/Python 笔记.md",
+    "代码笔记/编程/Scala.md",
+    "代码笔记/编程/前端编程.md",
+    "代码笔记/最长连续不重复子串.md",
+    "代码笔记/a composite type.md",
+    "代码笔记/a simple type.md",
+    "代码笔记/an abstract data type.md"
+  ]
+}
