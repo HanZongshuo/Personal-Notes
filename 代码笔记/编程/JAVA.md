@@ -190,3 +190,79 @@ N-ary tree：每个节点最多N个子节点
 Full Tree(Perfect Binary Tree): 所有层都填满
 Perfect Tree：每个节点有两个或者0个子节点
 Complete Tree：除了最后一层，其余的都填满。最后一层的节点必须从左到右。
+
+前序遍历，中序遍历和后续遍历
+[【有挂！！】二叉树遍历秒解，前序遍历、中序遍历、后序遍历_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1hw4m1q7DF/?spm_id_from=333.337.search-card.all.click&vd_source=dfd5ab52d1797f02d8cd2499a5d71f61)
+
+## Lab  3 
+1. 证明：对于一棵非空二叉树，拥有两个非空孩子的节点数加 1，等于叶子节点数。
+
+ - (n_0)：没有孩子的节点（叶子）
+- (n_1)：恰好有一个孩子的节点
+- (n_2)：有两个孩子的节点（perfect nodes） 
+- 
+-  对于总节点N 来说：$N=n_0+n_1+n_2$ ，每个 (n_1) 节点贡献 1 条边，(n_2) 节点贡献 2 条边，叶子节点贡献 0 条边。N个节点总共N-1条边，因此$N-1=n_1+2n_2$ . 得到n0 = n2 + 1.
+
+1. 证明在二元树有N个节点，会有N+1个空子树。
+首先每个树会有两个子树，那么对于N个节点则会有2N个位置，其中有N-1个位置被父节点占据（根节点不会被父节点占据），则还剩下2N - （N-1） = N + 1个位置。所以会有N+1个空子树。
+2. 证明一个完美二元树有L个叶子节点，则总结点数为2L-1个节点。
+由于N = n0 + n2，n0 = n2+1，n0也就是L，n0+n2也就是 L + L - 1也就是2L - 1个节点
+
+### Binary Search Tree
+最大与最小深度代码
+```
+public int height() {  
+    return height(this);  
+}  
+  
+private int height(BinaryNode<T> t) {  
+    if ( t == null )  
+       return -1;  
+    return 1 + Math.max(height(t.left), height(t.right));  
+}
+
+//最小深度
+public int lowness() {  
+    return lowness(this);  
+}  
+  
+private int lowness(BinaryNode<T>t){  
+    if(t.left == null && t.right == null){  
+       return 0;  
+    }  
+    if(t.left == null){  
+       return 1 + lowness(t.right);  
+    }  
+  
+    if(t.right == null){  
+       return 1 + lowness(t.left);  
+    }  
+    //左右孩子都在  
+    return  1 + Math.min(lowness(t.left),lowness(t.right)); }
+```
+大小代码
+```
+public int size() {  
+    return size(this);  
+}  
+  
+private int size(BinaryNode<T>t){  
+    if(t == null){  
+       return 0;  
+    }  
+    return 1 + size(t.left) + size(t.right);  
+}
+```
+
+叶子节点个数
+```
+public int leaves() {  
+    return leaves(this);  
+}  
+  
+private int leaves(BinaryNode<T> t){  
+    if(t == null) return 0;  
+    if(t.left == null  && t.right == null) return 1;  
+    return leaves(t.left) + leaves(t.right);  
+}
+```

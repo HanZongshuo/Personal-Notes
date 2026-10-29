@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "代码笔记/数学.md",
+                "file": "代码笔记/编程/JAVA.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "数学"
+              "title": "JAVA"
             }
           }
         ]
@@ -166,9 +166,19 @@
               "icon": "lucide-archive",
               "title": "添加笔记属性"
             }
+          },
+          {
+            "id": "70d091b568ee9c14",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -177,6 +187,8 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "fix-math:Current file": false,
+      "obsidian-git:Open Git source control": false,
       "bases:新建数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
@@ -188,12 +200,13 @@
   },
   "active": "825697f1dded973b",
   "lastOpenFiles": [
+    "代码笔记/数学.md",
     "代码笔记/编程/JAVA.md",
+    "代码笔记/OS/Operating System.md",
     "未命名.base",
     "账号/Google.md",
     "代码笔记/求一个数字的二进制表示有多少个1.md",
     "代码笔记/编程/算法基础.md",
-    "代码笔记/数学.md",
     "代码笔记/深度学习/CS224n.md",
     "未命名.canvas",
     "代码笔记/深度学习/代码.md",
@@ -221,7 +234,6 @@
     "英语/attachments",
     "2026-05-08.md",
     "未命名 2.base",
-    "代码笔记/OS/Operating System.md",
     "代码笔记/OS/attachments/Exercises.pdf",
     "zotero",
     "代码笔记/OS/Exercise.md",
