@@ -209,6 +209,41 @@ Complete Tree：除了最后一层，其余的都填满。最后一层的节点�
 由于N = n0 + n2，n0 = n2+1，n0也就是L，n0+n2也就是 L + L - 1也就是2L - 1个节点
 
 ### Binary Search Tree
+构造代码
+```
+public class BinaryNode<T> {  
+    private T data;  
+    private BinaryNode<T> left, right;  
+  
+public BinaryNode(T data) {  
+       this(data,null,null);  
+    }  
+  
+public BinaryNode(T data, BinaryNode<T> left, BinaryNode<T> right) {  
+       this.data = data;  
+       this.left = left;  
+       this.right = right;  
+    }  
+      
+    //////////////// accessors  
+    public T data() {  
+       return data;  
+    }  
+      
+    public BinaryNode<T> left() {  
+       return left;  
+    }  
+      
+    public BinaryNode<T> right() {  
+       return right;  
+    }  
+      
+    //////////////// utility methods  
+    public boolean isLeaf() {  
+       return left == null && right == null;  
+    }
+```
+
 最大与最小深度代码
 ```
 public int height() {  
@@ -265,4 +300,23 @@ private int leaves(BinaryNode<T> t){
     if(t.left == null  && t.right == null) return 1;  
     return leaves(t.left) + leaves(t.right);  
 }
+```
+
+结构是否相同
+```
+public boolean isomorphic(BinaryNode<T> t) {
+		return isomorphic(this,t);
+	}
+	
+	private boolean isomorphic(BinaryNode<T> t1, BinaryNode<T> t2){
+		if(t1 == null){
+			return t2 == null;//t1是空的时候检查2是不是空的
+		}
+		
+		if(t2 == null){ //这里明确1不是空了，如果2空则false
+			return false;
+		}
+		
+		return isomorphic(t1.left,t2.left)&&isomorphic(t1.right,t2.right);
+	}
 ```
