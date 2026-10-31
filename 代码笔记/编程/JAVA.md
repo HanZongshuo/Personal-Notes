@@ -190,6 +190,7 @@ N-ary tree：每个节点最多N个子节点
 Full Tree(Perfect Binary Tree): 所有层都填满
 Perfect Tree：每个节点有两个或者0个子节点
 Complete Tree：除了最后一层，其余的都填满。最后一层的节点必须从左到右。
+Perfect Binary Tree: 每个非叶子节点都要有两个孩子，所有叶子节点在同一层
 
 前序遍历，中序遍历和后续遍历
 [【有挂！！】二叉树遍历秒解，前序遍历、中序遍历、后序遍历_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1hw4m1q7DF/?spm_id_from=333.337.search-card.all.click&vd_source=dfd5ab52d1797f02d8cd2499a5d71f61)
@@ -207,6 +208,9 @@ Complete Tree：除了最后一层，其余的都填满。最后一层的节点�
 首先每个树会有两个子树，那么对于N个节点则会有2N个位置，其中有N-1个位置被父节点占据（根节点不会被父节点占据），则还剩下2N - （N-1） = N + 1个位置。所以会有N+1个空子树。
 2. 证明一个完美二元树有L个叶子节点，则总结点数为2L-1个节点。
 由于N = n0 + n2，n0 = n2+1，n0也就是L，n0+n2也就是 L + L - 1也就是2L - 1个节点
+
+二叉搜索树的不变式是：对于二叉搜索树中的每一个节点，假设键值为k，其左子树全部节点<k<右子树全部节点
+
 
 ### Binary Search Tree
 构造代码
@@ -276,6 +280,7 @@ private int lowness(BinaryNode<T>t){
     return  1 + Math.min(lowness(t.left),lowness(t.right)); }
 ```
 大小代码
+复杂度始终是O(n)，需要遍历所有的节点
 ```
 public int size() {  
     return size(this);  
@@ -290,6 +295,7 @@ private int size(BinaryNode<T>t){
 ```
 
 叶子节点个数
+复杂度同样是O(n)，遍历所有的
 ```
 public int leaves() {  
     return leaves(this);  
@@ -319,4 +325,36 @@ public boolean isomorphic(BinaryNode<T> t) {
 		
 		return isomorphic(t1.left,t2.left)&&isomorphic(t1.right,t2.right);
 	}
+```
+
+斐波那契树
+```
+public static BinaryNode<Integer> fibonacci(int n) {  
+    if(n == 0 || n == 1){  
+       return new BinaryNode<>(n);  
+    }  
+    return new BinaryNode<>(n,fibonacci(n-1),fibonacci(n-2));  
+}
+```
+
+高度平衡二叉树
+```
+private boolean balanced1(BinaryNode<T>t){  
+    if(t== null){  
+       return true;  
+    }  
+    //平衡的条件是左右子树都平衡，当前节点的左右高度差在1之内  
+    return balanced1(t.left) && balanced1(t.right) &&Math.abs(height(t.left) - height(t.right))<=1;  
+}
+```
+
+### Week 4
+在节点的基础上，增加键值对进行匹配。
+```
+public class Node<K, V> {
+	K key;
+	V value;
+	Node<K, V> left;
+	Node<K, V> right;
+}
 ```
