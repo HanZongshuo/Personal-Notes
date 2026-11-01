@@ -358,3 +358,108 @@ public class Node<K, V> {
 	Node<K, V> right;
 }
 ```
+
+检查是否是二叉搜索树
+最坏情况下的时间复杂度是O(n),需要检查完所有节点；最好为O(1)，当根节点就不满足条件
+
+思路就是通过保存一个节点信息，然后通过中序遍历看节点大小是否为严格递增的。左中右的顺序
+
+```
+public boolean isBST2() {  
+    BinaryNode<T> last = new BinaryNode<>(null);  
+    return isBST2(root,last);  
+}  
+  
+private boolean isBST2(BinaryNode<T> node, BinaryNode<T> last){  
+    if(node == null) return true;  
+    if(!isBST2(node.left,last)) return false;  
+    if(last.element != null && node.element.compareTo(last.element)<=0){  
+        return  false;  
+    }  
+    last.element = node.element;  
+    return isBST2(node.right,last);  
+}
+```
+
+
+```
+//BST是否包含某个节点
+public boolean contains( T x ) {  
+    return contains( x, root );  
+}  
+  
+private boolean contains( T x, BinaryNode t ) {  
+    if(t == null) return false;  
+    if(x.compareTo(t.element)<0){  
+        return contains(x,t.left);  
+    }else if(x.compareTo(t.element)>0){  
+        return contains(x,t.right);  
+    }else{  
+        return true;  
+    }  
+}
+
+//插入节点
+public void add( T x ) {  
+    root = add( x, root );  
+}  
+  
+private BinaryNode add( T x, BinaryNode t ) {  
+    if(t == null){  
+        return new BinaryNode(x);  
+    };  
+    int compareResult = x.compareTo(t.element);  
+    if(compareResult<0){  
+        t.left = add(x,t.left);  
+    }else if(compareResult>0){  
+        t.right = add(x,t.right);  
+    }  
+    return t;  
+}
+
+//寻找最小，最大值
+public T findMin( ) throws EmptyTreeException {  
+    if( isEmpty( ) )  
+        throw new EmptyTreeException( );  
+    return findMin( root ).element;  
+}  
+  
+private BinaryNode findMin( BinaryNode t ) {  
+    if( t.left == null )  
+        return t;  
+    return findMin( t.left );  
+}  
+  
+public T findMax( ) throws EmptyTreeException {  
+    if( isEmpty( ) )  
+        throw new EmptyTreeException( );  
+    return findMax( root ).element;  
+}  
+  
+private BinaryNode findMax( BinaryNode t ) {  
+    while( t.right != null )  
+        t = t.right;  
+    return t;  
+}
+
+//删掉目标元素
+public void remove( T x ) {  
+    root = remove( x, root );  
+}  
+  
+private BinaryNode remove( T x, BinaryNode t ) {  
+    if(t==null) return t;  
+    int compareResult = x.compareTo(t.element);  
+    if(compareResult<0){  
+        t.left = remove(x,t.left);  
+    }else if(compareResult>0){  
+        t.right = remove(x,t.right);  
+    }else if(t.left != null && t.right != null){  //找到目标元素，左右孩子都不是空的
+        t.element = findMax(t.left).element;  
+        remove(t.element,t.left);  
+    }else{  
+        t = (t.left!=null)? t.left: t.right;  
+    }  
+    return t;  
+}
+```
