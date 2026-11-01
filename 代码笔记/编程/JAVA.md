@@ -246,6 +246,8 @@ public BinaryNode(T data, BinaryNode<T> left, BinaryNode<T> right) {
     public boolean isLeaf() {  
        return left == null && right == null;  
     }
+  }
+}
 ```
 
 最大与最小深度代码
@@ -456,10 +458,38 @@ private BinaryNode remove( T x, BinaryNode t ) {
         t.right = remove(x,t.right);  
     }else if(t.left != null && t.right != null){  //找到目标元素，左右孩子都不是空的
         t.element = findMax(t.left).element;  
-        remove(t.element,t.left);  
+        t.left = remove(t.element,t.left);  
     }else{  
         t = (t.left!=null)? t.left: t.right;  
     }  
     return t;  
+}
+```
+
+前驱与后驱节点
+
+```
+public T predecessor( T x ) {  
+    return predecessor(x,root,null);  
+}  
+  
+private T predecessor(T x, BinaryNode t, BinaryNode p){  
+    if(t == null){  
+        return null;  
+    }  
+    int compareResult = x.compareTo(t.element);  
+    //当前的节点大于x，那么不可能为前驱节点，继续向左  
+    if(compareResult <0){  
+        return predecessor(x,t.left,p);  
+    }  
+    //保持候选，继续递归  
+    if ( compareResult > 0 )  
+        return predecessor(x, t.right, t); 
+//这里表示找到了目标节点，如果没有左子树，那么久使用p记录的值 
+    if(t.left == null){  
+        return p == null ? null : p.element;  //防止p是null无法访问element的属性
+    }  
+    //如果存在左子树，那么就找左子树最大值即可
+    return findMax(t.left).element;  
 }
 ```
