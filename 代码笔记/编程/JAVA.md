@@ -493,3 +493,23 @@ private T predecessor(T x, BinaryNode t, BinaryNode p){
     return findMax(t.left).element;  
 }
 ```
+
+
+### Mid-term exam
+```
+public static boolean valueIndex(int[] A){  
+    int l = 0, r = A.length - 1;  
+    while(l<=r){  
+        int mid = l + (r-l)/2;  
+        if(A[mid] < mid){  
+            l = mid + 1;  
+        }else if(A[mid] > mid){  
+            r = mid-1;  
+        }else{  
+            return true;  
+        }  
+    }  
+    return false;  
+}
+
+```
