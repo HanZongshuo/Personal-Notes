@@ -513,3 +513,48 @@ public static boolean valueIndex(int[] A){
 }
 
 ```
+
+```
+public class UndoableStack <T>{  
+    private enum  Action{PUSH,POP}  
+  
+    private Stack<T> stackItem;  
+    private Stack<Action> stackAction;  
+    private Stack<T> stackPop;  
+  
+    public UndoableStack(){  
+        stackItem = new Stack<>();  
+        stackAction = new Stack<>();  
+        stackPop = new Stack<>();  
+    }  
+  
+    public boolean isEmpty(){  
+        return stackItem.isEmpty();  
+    }  
+  
+    public void push(T item){  
+        stackItem.push(item);  
+        stackAction.push(Action.PUSH);  
+    }  
+  
+    public T pop(){  
+        T item = stackItem.pop();  
+        stackAction.push(Action.POP);  
+        stackPop.push(item);  
+        return item;  
+    }  
+  
+    public T peek(){  
+        return stackItem.peek();  
+    }  
+  
+    public void undo(){  
+        if(stackAction.isEmpty())  
+            return;  
+        Action action = stackAction.pop();  
+        if(action == Action.PUSH)  
+            stackItem.pop();  
+        else            stackItem.push(stackPop.pop());  
+    }  
+}
+```
