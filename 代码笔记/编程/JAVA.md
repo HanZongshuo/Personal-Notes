@@ -558,3 +558,29 @@ public class UndoableStack <T>{
     }  
 }
 ```
+
+这种做法的缺点在于stackAction 和stackPop会一直增长，随着使用时间增长，数量会一直增加。那么解决办法就是使用一个circleStack，设定一个保存最多多少条记录的机制。
+
+```
+private Optional<Integer> isLeaningLeft(BinaryNode root) {
+    if (root == null)
+        return Optional.of(-1);//创建有个装着-1的盒子
+
+    if (root.left == null && root.right == null)
+        return Optional.of(0); //创建一个装着0的盒子
+
+    Optional<Integer> left = isLeaningLeft(root.left);
+    if (!left.isPresent())
+        return Optional.empty();//左子树检查失败，返回空盒子
+
+    Optional<Integer> right = isLeaningLeft(root.right);
+    if (!right.isPresent())
+        return Optional.empty();
+
+    if (left.get() <= right.get()) //取出盒子里的值
+        return Optional.empty();
+
+    return Optional.of(left.get() + 1);
+}
+```
+[红黑树 - 定义, 插入, 构建_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Xm421x7Lg/?spm_id_from=333.337.search-card.all.click&vd_source=dfd5ab52d1797f02d8cd2499a5d71f61) 红黑树
